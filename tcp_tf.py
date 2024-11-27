@@ -6,9 +6,9 @@ import time
 #taskkill /PID 12345 /F
 
 # Configurações gerais
-BUFFER_SIZE = 4096
+BUFFER_SIZE = 4096 * 300
 SERVER_HOST = "127.0.0.1"
-SERVER_PORT = 5001
+SERVER_PORT = 9999
 
 
 def receive_file_tcp():
@@ -30,14 +30,14 @@ def receive_file_tcp():
     print(f"Recebendo arquivo {filename} ({filesize} bytes)...")
 
     with open(filename, "wb") as file:
-        progress = tqdm.tqdm(range(filesize), f"Recebendo {filename}", unit="B", unit_scale=True, unit_divisor=1024)
-        for _ in progress:
-            data = conn.recv(BUFFER_SIZE)
-            if not data:
-                break
-            file.write(data)
-            progress.update(len(data))
+        #progress = tqdm.tqdm(range(filesize), f"Recebendo {filename}", unit="B", unit_scale=True, unit_divisor=1024)
+        #for _ in progress:
+           # data = conn.recv(BUFFER_SIZE)
+           # if not data:
+              #  break
 
+            #progress.update(len(data))
+        file.write(data)
     print(f"Arquivo {filename} recebido com sucesso.")
     conn.close()
     server_socket.close()

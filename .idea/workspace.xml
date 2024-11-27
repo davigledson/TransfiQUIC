@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8033d3e-0efa-40bf-9763-c0b9eba53e5f" name="Changes" comment="" />
+    <list default="true" id="e8033d3e-0efa-40bf-9763-c0b9eba53e5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openssl.cnf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quic_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_to_send/arq.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/arq.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quic_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/quic_tf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcp_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/tcp_tf.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,28 +25,40 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2pJRww1EF1jQBAiSzgnD3W3sqhZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.quic tranfer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.quic_tf (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.quic_tf.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tcp_tf.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/davig/OneDrive/Documentos/GitHub/transfiquic/files_to_send&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.quic tranfer.executor": "Run",
+    "Python.quic_tf (1).executor": "Run",
+    "Python.quic_tf.executor": "Run",
+    "Python.tcp_tf.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/davig/OneDrive/Documentos/GitHub/transfiquic/files_to_send",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\davig\OneDrive\Documentos\GitHub\transfiquic\files_to_send" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\davig\OneDrive\Documentos\GitHub\TransfiQuic" />
     </key>
   </component>
   <component name="RunManager" selected="Python.quic_tf (1)">
