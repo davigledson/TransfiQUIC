@@ -6,7 +6,7 @@ import time
 #taskkill /PID 12345 /F
 
 # Configurações gerais
-BUFFER_SIZE = 4096 * 300
+BUFFER_SIZE = 4096
 SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 9999
 
@@ -30,13 +30,13 @@ def receive_file_tcp():
     print(f"Recebendo arquivo {filename} ({filesize} bytes)...")
 
     with open(filename, "wb") as file:
-        #progress = tqdm.tqdm(range(filesize), f"Recebendo {filename}", unit="B", unit_scale=True, unit_divisor=1024)
-        #for _ in progress:
-           # data = conn.recv(BUFFER_SIZE)
-           # if not data:
-              #  break
+        progress = tqdm.tqdm(range(filesize), f"Recebendo {filename}", unit="B", unit_scale=True, unit_divisor=1024)
+        for _ in progress:
+            data = conn.recv(BUFFER_SIZE)
+            if not data:
+                break
 
-            #progress.update(len(data))
+            progress.update(len(data))
         file.write(data)
     print(f"Arquivo {filename} recebido com sucesso.")
     conn.close()
@@ -84,7 +84,9 @@ def main():
     print("Selecione uma opção:")
     print("1. Enviar arquivo")
     print("2. Receber arquivo")
-    choice = input("Escolha (1 ou 2): ").strip()
+    print("3. Enviar arquivo direto (por codigo)")
+
+    choice = input("Escolha (1 ou 2 ou 3): ").strip()
 
     if choice == "1":
         filename = input("Caminho do arquivo para enviar: ").strip()
@@ -101,6 +103,23 @@ def main():
             print("Arquivo não encontrado.")
     elif choice == "2":
         receive_file_tcp()
+    elif choice == "3":
+
+        filename = "arq_p.exe"
+        if os.path.exists(filename):
+            # Enviar arquivo e medir as métricas
+            filesize, transfer_time, transfer_rate = send_file_tcp(filename)
+
+            # Exibir as métricas de envio
+            print("\nMétricas de Desempenho de Envio via TCP:")
+            print(f"Tamanho do arquivo: {filesize / (1024 * 1024):.2f} MB")
+            print(f"Tempo de Envio: {transfer_time:.2f} segundos")
+            print(f"Taxa de Transferência: {transfer_rate:.2f} MB/s")
+        else:
+            print("Arquivo não encontrado.")
+
+
+
     else:
         print("Opção inválida.")
 

@@ -100,12 +100,24 @@ async def start_server():
 
 async def main():
     print("Selecione uma opção:")
-    print("1. Iniciar servidor")
+    print("1.  Enviar arquivo direto (por codigo)")
     print("2. Enviar arquivo como cliente")
     choice = input("Escolha (1/2): ").strip()
 
+    #if choice == "1":
+        #await start_server()
     if choice == "1":
-        await start_server()
+        filename = "arq_p.exe"
+        if os.path.exists(filename):
+            # receber as métricas
+            filesize, transfer_time, transfer_rate = await send_file_quic(filename)
+
+            print("\nMétricas de Desempenho de Envio via QUIC:")
+            print(f"Tamanho do arquivo: {filesize / (1024 * 1024):.2f} MB")
+            print(f"Tempo de Envio: {transfer_time:.2f} segundos")
+            print(f"Taxa de Transferência: {transfer_rate:.2f} MB/s")
+        else:
+            print("Arquivo não encontrado.")
     elif choice == "2":
         filename = input("Caminho do arquivo para enviar: ").strip()
         if os.path.exists(filename):
@@ -125,4 +137,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
